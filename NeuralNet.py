@@ -10,26 +10,6 @@ from activation_functions import sigmoid_function, tanh_function, linear_functio
 								 LReLU_function, ReLU_function
 from tools import add_bias
 
-"""
-settings = {
-
-	# Preset Parameters
-	"n_inputs" 				:  86*86+1, 		# Number of input signals
-	"n_outputs"				:  1, 				# Number of output signals from the network
-	"n_hiddens"				:  1,				# Number of nodes per hidden layer
-	"n_hidden_layers"		:  1,   			# Number of Hidden Layers in the network
-	"activation_functions"	:  [ tanh_function, sigmoid_function ],		# Activation functions by layer
-
-	# Optional parameters
-
-	"weights_low"			: -0.1,		# Lower bound on initial weight range
-	"weights_high"			: 0.1,  	# Upper bound on initial weight range
-	"save_trained_network"  : False,	# Save trained weights or not.
-
-	"batch_size"			: 0, 		# 1 for stochastic gradient descent, 0 for gradient descent
-}
-"""
-
 # Data specific
 image_length = 86*86
 image_width = 86
