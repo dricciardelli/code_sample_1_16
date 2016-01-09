@@ -53,10 +53,6 @@ class NeuralNetwork(object):
 		# Calculate first activation
 		self.Z2 = np.dot(X_bias, self.weight_layers[0])
 
-		# Pass Activation, Non-linearity list for backprop
-		# self.A_list = [ X_bias ]
-		# self.Z_list = [ Z2 ]
-
 		if (self.n_hidden_layers == 0):
 			# Return activation on Z2
 			return self.activation_functions[0]( self.Z2 , False)
@@ -68,7 +64,7 @@ class NeuralNetwork(object):
 			self.Z3 = np.dot(A2_bias, self.weight_layers[1])
 			yHat = self.activation_functions[1]( self.Z3, False)
 
-			# Produces z_final
+			# Final layer output
 			return yHat
 
 	def backprop(self, X, y):
