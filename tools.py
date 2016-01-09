@@ -71,24 +71,28 @@ def image_averages( images, scores):
 	# Output mean (hah?) face
 	print("Average Face")
 	mean = array_average(images)
+	mean = np.reshape(mean, (image_width, image_height))
 	plt.imshow(mean, cmap=cm.Greys_r)
 	plt.show()
 
 	# Output average low scoring face
 	print("Low scoring Face")
 	low_mean = array_average(low_images)
+	low_mean = np.reshape(low_mean, (image_width, image_height))
 	plt.imshow(low_mean, cmap=cm.Greys_r)
 	plt.show()
 
 	# Output average high scoring face
 	print("High Scoring Face")
 	high_mean = array_average(high_images)
+	high_mean = np.reshape(high_mean, (image_width, image_height))
 	plt.imshow(high_mean, cmap=cm.Greys_r)
 	plt.show()
 
 	# Difference between low scoring mean and high scoring mean
 	print("High_Mean minus Mean")
-	plt.imshow(low_mean - high_mean, cmap=cm.Greys_r)
+	diff_mean = np.reshape(high_mean - low_mean, (image_width, image_height))
+	plt.imshow(diff_mean, cmap=cm.Greys_r)
 	plt.show()
 # end image_averages
 
@@ -181,12 +185,12 @@ def add_bias(Z):
 # end add_bias
 
 
-#image_averages( fem_images, fem_scores)
 #altered_tour(fem_images, fem_scores)
 [male_images, male_scores, fem_images, fem_scores] = load_data()
-#image_tour(fem_images, fem_scores, 5)
-pca_plot( male_images, male_scores )
+#image_tour( fem_images, fem_scores, 5)
+#image_averages( fem_images, fem_scores)
+#pca_plot( male_images, male_scores )
+pca_tour( fem_images, d=5)
 
-#pca_tour( fem_images, 10)
 
 	
